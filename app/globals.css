@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* shadcn tokens mapped to the Accord palette */
+    --background: 45 56% 92%;
+    --foreground: 332 20% 17%;
+    --card: 44 100% 97%;
+    --card-foreground: 332 20% 17%;
+    --primary: 344 86% 47%;
+    --primary-foreground: 44 80% 97%;
+    --secondary: 40 55% 51%;
+    --secondary-foreground: 332 25% 14%;
+    --muted: 42 30% 88%;
+    --muted-foreground: 17 15% 38%;
+    --destructive: 344 86% 47%;
+    --destructive-foreground: 44 80% 97%;
+    --border: 40 22% 80%;
+
+    --gold-grad: linear-gradient(120deg, #9c7320, #f1d98e 45%, #c79a3e 60%, #9c7320);
+    --ease: cubic-bezier(0.16, 0.84, 0.44, 1);
+  }
+
+  * {
+    @apply border-border;
+    box-sizing: border-box;
+  }
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+  }
+  body {
+    @apply bg-ivory text-ink font-body antialiased;
+    overflow-x: hidden;
+  }
+  body.is-locked {
+    overflow: hidden;
+  }
+
+  /* Lenis smooth scrolling */
+  html.lenis,
+  html.lenis body {
+    height: auto;
+  }
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+  .lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+  }
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
+}
+
+@layer utilities {
+  .text-gold-gradient {
+    background: var(--gold-grad);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .bg-gold-gradient {
+    background: var(--gold-grad);
+  }
+  .grain {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.32'/%3E%3C/svg%3E");
+  }
+  .stripes {
+    background: repeating-linear-gradient(90deg, #3f6b3f 0 2px, transparent 2px 13px);
+  }
+
+  /* Retro hand-set label feel: small underlined connector words inside headlines */
+  .retro-connector {
+    font-size: 0.52em;
+    text-decoration: underline;
+    text-underline-offset: 0.18em;
+    text-decoration-thickness: 0.06em;
+    font-style: italic;
+    vertical-align: 0.18em;
+    letter-spacing: 0;
+    margin: 0 0.08em;
+  }
+
+  /* Diagonal red wipe at a section's top edge */
+  .diag-top-red {
+    clip-path: polygon(0 7vw, 100% 0, 100% 100%, 0 100%);
+  }
+  .diag-top-cream {
+    clip-path: polygon(0 0, 100% 7vw, 100% 100%, 0 100%);
+  }
+
+  /* Tight, ALL-CAPS retro display headline */
+  .retro-head {
+    font-family: var(--font-condensed), Impact, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    line-height: 0.92;
+  }
+}

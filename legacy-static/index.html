@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Accord — Super Strong Beer · Accord Distillers &amp; Brewers</title>
+  <meta name="description" content="Accord super strong beers — 10000, Holandas, Chennai King and Royal Accord. Boldly brewed by Accord Distillers & Brewers Pvt. Ltd. Crafted with finest grade barley and imported hops." />
+  <link rel="icon" href="images/accord-logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,900;1,9..144,600;1,9..144,900&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- ============================================================
+       AGE GATE — legal drinking age confirmation
+       ============================================================ -->
+  <div class="agegate" id="ageGate" role="dialog" aria-modal="true" aria-labelledby="ageTitle" hidden>
+    <div class="agegate__card">
+      <img class="agegate__logo" src="images/accord-logo.png" alt="Accord" width="92" height="92" />
+      <h2 id="ageTitle">Are you of legal drinking age?</h2>
+      <p>This site contains information about alcoholic beverages and is intended for adults of legal drinking age only.</p>
+      <div class="agegate__actions">
+        <button class="btn btn--solid" id="ageYes">Yes, I am</button>
+        <button class="btn btn--ghost" id="ageNo">No</button>
+      </div>
+      <p class="agegate__deny" id="ageDeny" hidden>Sorry — you must be of legal drinking age to enter. Please drink responsibly.</p>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       BACKGROUND — global atmosphere (pinstripe + grain + fizz)
+       ============================================================ -->
+  <div class="bg" aria-hidden="true">
+    <div class="bg__wash"></div>
+    <div class="bg__stripes"></div>
+    <!-- floating elegant shapes (ported from HeroGeometric) -->
+    <div class="bg__shapes">
+      <span class="shape shape--1"></span>
+      <span class="shape shape--2"></span>
+      <span class="shape shape--3"></span>
+      <span class="shape shape--4"></span>
+      <span class="shape shape--5"></span>
+    </div>
+    <div class="bg__grain"></div>
+    <div class="bg__bubbles" id="bubbles"></div>
+  </div>
+
+  <!-- scroll progress bar -->
+  <div class="scrollbar" id="scrollbar" aria-hidden="true"></div>
+
+  <!-- ============================================================
+       NAV HEADER
+       ============================================================ -->
+  <header class="nav" id="top">
+    <div class="nav__inner">
+      <a class="nav__brand" href="#top" aria-label="Accord — Home">
+        <img src="images/accord-logo.png" alt="" width="40" height="40" />
+        <span class="nav__name">ACCORD</span>
+      </a>
+
+      <nav class="nav__links" id="navLinks" aria-label="Primary navigation">
+        <span class="nav__cursor" id="navCursor" aria-hidden="true"></span>
+        <a href="#top">Home</a>
+        <a href="#beers">Our Beers</a>
+        <a href="#lineup">The Range</a>
+        <a href="#story">Our Story</a>
+        <a href="#contact" class="nav__cta">Contact</a>
+      </nav>
+
+      <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============================================================
+         HERO
+         ============================================================ -->
+    <section class="hero reveal" id="home" data-spotlight>
+      <span class="hero__spot" id="heroSpot" aria-hidden="true"></span>
+      <div class="hero__copy">
+        <div class="hero__kicker">
+          <span>Super Strong Beer</span> · Brewed since 2013
+        </div>
+
+        <h1 class="hero__title">
+          <span class="line" data-animate-text>Brewed Bold.</span>
+          <span class="line line--accent" data-animate-text>Built Strong.</span>
+        </h1>
+
+        <p class="hero__lead">
+          The pride of <strong>Accord Distillers &amp; Brewers</strong>. Four flagship
+          super strong beers — crafted with finest grade barley and imported hops,
+          for those who like it <em>high octane</em>.
+        </p>
+
+        <div class="hero__actions">
+          <a href="#beers" class="btn btn--solid magnetic">Explore our beers</a>
+          <a href="#story" class="btn btn--ghost magnetic">Our story</a>
+        </div>
+
+        <ul class="hero__stats">
+          <li><strong data-count="4">0</strong><span>flagship brews</span></li>
+          <li><strong data-count="8" data-suffix="%">0</strong><span>up to ABV</span></li>
+          <li><strong>1M+</strong><span>cases / month</span></li>
+        </ul>
+      </div>
+
+      <div class="hero__shot" data-parallax="0.05">
+        <div class="hero__halo"></div>
+        <img src="images/bottle-10000.png" alt="Accord 10000 super strong beer bottle" width="333" height="1150" />
+        <span class="hero__badge">High&nbsp;Octane</span>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         FEATURES — brand pillars
+         ============================================================ -->
+    <section class="features reveal" id="features">
+      <header class="section-head">
+        <span class="eyebrow">Why Accord</span>
+        <h2 class="section-title">Strength you can <em>taste</em></h2>
+      </header>
+
+      <div class="features__grid" data-stagger data-autocycle>
+        <article class="feature">
+          <span class="feature__num">01</span>
+          <h3>Super strong</h3>
+          <p>High-octane brews of up to 8% ABV. Full-bodied, bold and built for the occasion.</p>
+        </article>
+        <article class="feature">
+          <span class="feature__num">02</span>
+          <h3>Crafted with care</h3>
+          <p>Finest grade barley and imported hops, brewed through an international process.</p>
+        </article>
+        <article class="feature">
+          <span class="feature__num">03</span>
+          <h3>Made at scale</h3>
+          <p>A modern brewery with capacity for over a million cases every single month.</p>
+        </article>
+        <article class="feature">
+          <span class="feature__num">04</span>
+          <h3>The pride of Accord</h3>
+          <p>Part of the Accord Group, brewing flagship strong beers across India since 2013.</p>
+        </article>
+      </div>
+      <div class="stepnav" id="featureSteps" aria-hidden="true">
+        <button class="stepnav__dot is-active"></button>
+        <button class="stepnav__dot"></button>
+        <button class="stepnav__dot"></button>
+        <button class="stepnav__dot"></button>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         IMAGES — the range / lineup showcase
+         ============================================================ -->
+    <section class="lineup reveal" id="lineup">
+      <header class="section-head section-head--center">
+        <span class="eyebrow eyebrow--light">The Range</span>
+        <h2 class="section-title section-title--light">One family. <em>Four characters.</em></h2>
+      </header>
+
+      <div class="selector" id="selector" data-stagger>
+        <button class="panel is-active" style="--c:#d4202f" data-panel>
+          <span class="panel__art"><img src="images/bottle-10000.png" alt="Accord 10000" loading="lazy" /></span>
+          <span class="panel__label">
+            <span class="panel__name">10000</span>
+            <span class="panel__sub">High-octane · 8% ABV</span>
+          </span>
+        </button>
+        <button class="panel" style="--c:#3b4fa0" data-panel>
+          <span class="panel__art"><img src="images/bottle-holandas.png" alt="Accord Holandas" loading="lazy" /></span>
+          <span class="panel__label">
+            <span class="panel__name">Holandas</span>
+            <span class="panel__sub">Premium · the pride of Accord</span>
+          </span>
+        </button>
+        <button class="panel" style="--c:#2f7d3e" data-panel>
+          <span class="panel__art"><img src="images/bottle-chennai.png" alt="Accord Chennai King" loading="lazy" /></span>
+          <span class="panel__label">
+            <span class="panel__name">Chennai King</span>
+            <span class="panel__sub">No.1 · ready to battle</span>
+          </span>
+        </button>
+        <button class="panel" style="--c:#b0152f" data-panel>
+          <span class="panel__art"><img src="images/bottle-royal-accord.png" alt="Accord Royal Accord" loading="lazy" /></span>
+          <span class="panel__label">
+            <span class="panel__name">Royal Accord</span>
+            <span class="panel__sub">8% ABV · the royal pour</span>
+          </span>
+        </button>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         TEXTS — story / history
+         ============================================================ -->
+    <section class="story reveal" id="story">
+      <div class="story__intro">
+        <span class="eyebrow">Our Story</span>
+        <h2 class="section-title">From a single brewery to a <em>nationwide name</em></h2>
+        <p class="story__text">
+          Accord Distillers &amp; Brewers Pvt. Ltd. — part of the
+          <strong>Accord Group</strong> — entered the world of brewing with a simple
+          ambition: to make bold, honest, super strong beer. From the first cases in
+          2013 to over a million cases a month today, the spirit hasn't changed —
+          <em>quality, strength and pride in every bottle.</em>
+        </p>
+      </div>
+
+      <ol class="timeline" data-stagger>
+        <li class="timeline__item">
+          <span class="timeline__year">2009</span>
+          <p>Accord enters the world of beer manufacturing.</p>
+        </li>
+        <li class="timeline__item">
+          <span class="timeline__year">2011</span>
+          <p>The brewing unit is set up and readied for production.</p>
+        </li>
+        <li class="timeline__item">
+          <span class="timeline__year">2013</span>
+          <p>Commercial production begins — the first Accord beers reach the market.</p>
+        </li>
+        <li class="timeline__item">
+          <span class="timeline__year">Today</span>
+          <p>Over a million cases a month and four flagship strong beers.</p>
+        </li>
+      </ol>
+    </section>
+
+    <!-- ============================================================
+         PRICING — our beers (the carta)
+         ============================================================ -->
+    <section class="beers reveal" id="beers">
+      <header class="section-head">
+        <span class="eyebrow">Our Beers</span>
+        <h2 class="section-title">Pick your <em>strong</em></h2>
+        <p class="beers__note">Four super strong beers, each with its own attitude.</p>
+      </header>
+
+      <div class="beers__grid" data-stagger>
+        <article class="beer" style="--c:#d4202f">
+          <div class="beer__shot"><img src="images/bottle-10000.png" alt="Accord 10000" loading="lazy" /></div>
+          <div class="beer__body">
+            <span class="beer__abv">8% ABV</span>
+            <h3>10000</h3>
+            <p class="beer__style">High-Octane Super Strong Lager · Volts</p>
+            <p class="beer__tag">“Taste the high octane super strong beer.”</p>
+          </div>
+        </article>
+
+        <article class="beer" style="--c:#3b4fa0">
+          <div class="beer__shot"><img src="images/bottle-holandas.png" alt="Accord Holandas" loading="lazy" /></div>
+          <div class="beer__body">
+            <span class="beer__abv">Premium Strong</span>
+            <h3>Holandas</h3>
+            <p class="beer__style">Premium Super Strong Beer · barley &amp; imported hops</p>
+            <p class="beer__tag">“…the pride of Accord.”</p>
+          </div>
+        </article>
+
+        <article class="beer" style="--c:#2f7d3e">
+          <div class="beer__shot"><img src="images/bottle-chennai.png" alt="Accord Chennai King" loading="lazy" /></div>
+          <div class="beer__body">
+            <span class="beer__abv">No.1 · 650ml</span>
+            <h3>Chennai King</h3>
+            <p class="beer__style">Super Strong Beer · the king of the city</p>
+            <p class="beer__tag">“…ready to battle.”</p>
+          </div>
+        </article>
+
+        <article class="beer" style="--c:#b0152f">
+          <div class="beer__shot"><img src="images/bottle-royal-accord.png" alt="Accord Royal Accord" loading="lazy" /></div>
+          <div class="beer__body">
+            <span class="beer__abv">8% ABV</span>
+            <h3>Royal Accord</h3>
+            <p class="beer__style">Super Strong Beer · the royal pour</p>
+            <p class="beer__tag">“Taste the royal super strong beer.”</p>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="footer" id="contact">
+    <!-- scrolling marquee (ported from CinematicFooter) -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>Super Strong Beer ✦ Muuuucho Sabor ✦ The Pride of Accord ✦ Ready to Battle ✦ High Octane ✦ Brewed Since 2013 ✦ </span>
+        <span>Super Strong Beer ✦ Muuuucho Sabor ✦ The Pride of Accord ✦ Ready to Battle ✦ High Octane ✦ Brewed Since 2013 ✦ </span>
+      </div>
+    </div>
+    <!-- giant background wordmark -->
+    <div class="footer__giant" aria-hidden="true">ACCORD</div>
+
+    <div class="footer__top">
+      <div class="footer__brand">
+        <img src="images/accord-logo.png" alt="Accord" width="56" height="56" />
+        <span class="footer__name">ACCORD</span>
+        <p class="footer__tag">Super strong beer, boldly brewed. The pride of Accord Distillers &amp; Brewers Pvt. Ltd.</p>
+      </div>
+
+      <nav class="footer__col" aria-label="Navigation">
+        <h4>Explore</h4>
+        <a href="#home">Home</a>
+        <a href="#beers">Our Beers</a>
+        <a href="#lineup">The Range</a>
+        <a href="#story">Our Story</a>
+      </nav>
+
+      <div class="footer__col">
+        <h4>The Beers</h4>
+        <a href="#beers">10000</a>
+        <a href="#beers">Holandas</a>
+        <a href="#beers">Chennai King</a>
+        <a href="#beers">Royal Accord</a>
+      </div>
+
+      <div class="footer__col">
+        <h4>Enquiries</h4>
+        <a href="mailto:info@accord-brewers.in">info@accord-brewers.in</a>
+        <span class="footer__line">Accord Distillers &amp; Brewers Pvt. Ltd.</span>
+        <span class="footer__line">Tamil Nadu, India</span>
+      </div>
+    </div>
+
+    <div class="footer__resp">
+      <strong>Drink responsibly.</strong> For adults of legal drinking age only.
+      Excessive consumption of alcohol is injurious to health.
+    </div>
+
+    <div class="footer__bottom">
+      <span>© 2013–2026 Accord Distillers &amp; Brewers Pvt. Ltd. · Accord Group</span>
+      <span class="footer__heart">Crafted with <b>❤</b> in India</span>
+      <nav class="footer__legal" aria-label="Legal">
+        <a href="#">Legal</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Cookie Policy</a>
+      </nav>
+      <button class="totop magnetic" id="toTop" aria-label="Back to top">↑</button>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
