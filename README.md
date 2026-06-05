@@ -1,5 +1,10 @@
 # Accord — Super Strong Beer (Next.js)
 
+🔗 **Live site:** https://accord-premium.s3.ap-south-1.amazonaws.com/index.html
+
+> Hosted as a static export on Amazon S3 (HTTPS REST endpoint — works on mobile).
+> Alt (HTTP, website endpoint): http://accord-premium.s3-website.ap-south-1.amazonaws.com/
+
 Marketing site for **Accord** super strong beers (Accord Distillers & Brewers Pvt.
 Ltd.), rebuilt as a **Next.js 14 + TypeScript + Tailwind** app integrating the
 React components from `website components/`, with **framer-motion** animation, a
